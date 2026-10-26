@@ -1,0 +1,215 @@
+:root {
+    --navy-dark: #0f172a;
+    --navy-primary: #1e293b;
+    --navy-card: #334155;
+    --aws-orange: #ff9900;
+    --aws-orange-hover: #ec7211;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --correct-green: #22c55e;
+    --wrong-red: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--navy-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    background-color: var(--navy-primary);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    padding: 30px;
+    border: 1px solid var(--navy-card);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--aws-orange);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: var(--aws-orange);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+p.subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.setup-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--navy-card);
+    background-color: var(--navy-dark);
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+}
+
+select:focus, input:focus {
+    border-color: var(--aws-orange);
+}
+
+.btn {
+    background-color: var(--aws-orange);
+    color: var(--navy-dark);
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--aws-orange-hover);
+    color: #fff;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: var(--navy-dark);
+    padding: 12px 15px;
+    border-radius: 6px;
+}
+
+.badge {
+    background-color: var(--aws-orange);
+    color: var(--navy-dark);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.timer-badge {
+    background-color: #ef4444;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+.question-text {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.option-item {
+    background-color: var(--navy-dark);
+    border: 2px solid var(--navy-card);
+    border-radius: 6px;
+    padding: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: border-color 0.2s;
+}
+
+.option-item:hover {
+    border-color: var(--aws-orange);
+}
+
+.option-item.selected {
+    border-color: var(--aws-orange);
+    background-color: rgba(255, 153, 0, 0.1);
+}
+
+.option-item input {
+    width: auto;
+    cursor: pointer;
+}
+
+.explanation-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--aws-orange);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 6px 6px 0;
+    display: none;
+}
+
+.explanation-box.visible {
+    display: block;
+}
+
+.score-box {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--navy-dark);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.score-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--aws-orange);
+}
+
+.review-item {
+    background-color: var(--navy-dark);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--navy-card);
+}
+
+.review-item.correct {
+    border-left-color: var(--correct-green);
+}
+
+.review-item.incorrect {
+    border-left-color: var(--wrong-red);
+}
+
+.hidden {
+    display: none !important;
+}

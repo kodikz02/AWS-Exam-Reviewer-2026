@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Certified Cloud Practitioner (CLF-C02) Reviewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>AWS Certified Cloud Practitioner</h1>
+        <p class="subtitle">CLF-C02 Offline Reviewer & Simulator</p>
+    </header>
+
+    <!-- SETUP SCREEN -->
+    <div id="setup-screen">
+        <div class="setup-group">
+            <label for="domain-select">Select Exam Domain:</label>
+            <select id="domain-select">
+                <option value="ALL">All Domains (Full Exam Prep)</option>
+                <option value="Domain 1">Domain 1: Cloud Concepts</option>
+                <option value="Domain 2">Domain 2: Security and Compliance</option>
+                <option value="Domain 3">Domain 3: Cloud Technology and Services</option>
+                <option value="Domain 4">Domain 4: Billing, Pricing, and Support</option>
+            </select>
+        </div>
+
+        <div class="setup-group">
+            <label for="question-count">Number of Questions:</label>
+            <input type="number" id="question-count" min="1" max="100" value="20">
+        </div>
+
+        <div class="setup-group">
+            <label for="time-limit">Time Limit (Minutes):</label>
+            <select id="time-limit">
+                <option value="0">No Time Limit</option>
+                <option value="10">10 Minutes</option>
+                <option value="20" selected>20 Minutes</option>
+                <option value="30">30 Minutes</option>
+                <option value="60">60 Minutes</option>
+                <option value="90">90 Minutes (Real Exam)</option>
+            </select>
+        </div>
+
+        <button class="btn" id="start-btn">Start Practice Exam</button>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-screen" class="hidden">
+        <div class="quiz-header">
+            <span id="domain-badge" class="badge">Domain</span>
+            <span id="timer-display" class="timer-badge">⏳ 20:00</span>
+            <span id="progress-text">Question 1/20</span>
+        </div>
+
+        <div id="question-text" class="question-text"></div>
+        <div id="options-container" class="options-container"></div>
+
+        <div id="explanation-box" class="explanation-box">
+            <strong style="color: var(--aws-orange);">Explanation:</strong>
+            <p id="explanation-text" style="margin-top: 5px; color: var(--text-light);"></p>
+        </div>
+
+        <button id="submit-btn" class="btn">Submit Answer</button>
+        <button id="next-btn" class="btn hidden">Next Question</button>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="hidden">
+        <div class="score-box">
+            <h2>Final Score</h2>
+            <div id="score-number" class="score-number">0 / 0</div>
+            <p id="percentage-text" style="color: var(--text-muted);"></p>
+            <p id="time-used-text" style="color: var(--aws-orange); margin-top: 5px; font-weight: bold;"></p>
+        </div>
+
+        <h3>Answer Review</h3>
+        <div id="review-container" style="margin-top: 15px;"></div>
+
+        <button class="btn" id="restart-btn">Retake Exam</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
